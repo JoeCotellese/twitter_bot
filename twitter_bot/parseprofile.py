@@ -4,10 +4,6 @@ import dateparser
 class ParseProfile():
     def __init__(self, html):
         self.html = html
-
-    @property
-    def following(self):
-        pass        
     
     @property
     def join_date(self):
@@ -32,6 +28,24 @@ class ParseProfile():
         return int(count)
     
     @property
+    def following(self):
+        #you must be logged in
+        soup = BeautifulSoup(self.html, 'html.parser')
+        user_actions = soup.find(class_='user-actions')
+        if 'not-following' in user_actions['class']:
+            return False
+        else:
+            return True        
+
+    @property
+    def follows_back(self):
+        soup = BeautifulSoup(self.html, 'html.parser')
+        follows_back = soup.find(class_='FollowStatus')
+        if follows_back == None:
+            return False
+        else:
+            return True
+    @property
     def muted(self):
         pass
 
@@ -40,5 +54,10 @@ class ParseProfile():
         pass
 
     @property
-    def screenname(self):
-        pass
+    def twitter_handle(self):
+        soup = BeautifulSoup(self.html, 'html.parser')
+        profile_card = soup.find(class_='ProfileHeaderCard-screenname')
+        username = '@{}'.format(profile_card.find(class_='u-linkComplex-target').string)
+        return username
+    
+    
