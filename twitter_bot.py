@@ -7,7 +7,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver.common.keys import Keys
 from twitter_bot.parseprofile import ParseProfile
 from twitter_bot.helper import StreamList
@@ -53,7 +53,11 @@ class TwitterBot:
         self.driver.close()
 
     def follow_user(self, url):
-        self.driver.get(url)
+        try:
+            self.driver.get(url)
+        except WebDriverException as e:
+            logging.info(e.msg)
+            return False
         source = self.driver.page_source
         profile = ParseProfile(source)
         th = profile.twitter_handle
@@ -64,10 +68,11 @@ class TwitterBot:
             actions = ActionChains(self.driver)
             actions.move_to_element(follow_button).click().perform()
             self.storage.save_user(th)
-            sleep(10)
+            sleep(20)
             return True
         else:
             logging.info("already following {}".format(profile.twitter_handle))
+            sleep(3)
             return False
     
     def _expand_endless_scroll(self, page):
@@ -124,7 +129,7 @@ def main():
     #tb.follow_user('https://twitter.com/grantheimbach')
     #tb.unfollow_user('https://twitter.com/grantheimbach')
     #tb.follow_suggested_followers(100)
-    tb.follow_search(3, "#macos #applications")
+    tb.follow_search(50, "#macos #productivity")
     #tb.follow_who_to_follow()
     tb.logout()
 
