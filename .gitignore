@@ -2,3 +2,13 @@
 config.py
 *.log
 *.db
+
+# Compiled python modules.
+*.pyc
+
+/build/
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
