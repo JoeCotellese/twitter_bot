@@ -1,6 +1,7 @@
 import logging
 from time import sleep
 from urllib.parse import quote
+import arrow
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,6 +11,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from twitter_bot.parseprofile import ParseProfile
 from twitter_bot.helper import StreamList
+from twitter_bot.storage import Storage
 import config
 
 
@@ -24,6 +26,7 @@ class TwitterBot:
         self.username = username
         self.password = password
         self.driver = webdriver.Firefox()
+        self.storage = Storage('twitterbot.db')
 
     def _setup_logger(self):
         logging.basicConfig(filename='twitterbot.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -53,12 +56,14 @@ class TwitterBot:
         self.driver.get(url)
         source = self.driver.page_source
         profile = ParseProfile(source)
-        logging.info("trying to follow %s" % profile.twitter_handle)
+        th = profile.twitter_handle
+        logging.info("trying to follow %s" % th)
         if (profile.following == False):
-            logging.info("following {}".format(profile.twitter_handle))
+            logging.info("following {}".format(th))
             follow_button = self.driver.find_element_by_css_selector('button.follow-text')
             actions = ActionChains(self.driver)
             actions.move_to_element(follow_button).click().perform()
+            self.storage.save_user(th)
             sleep(10)
             return True
         else:
@@ -76,7 +81,7 @@ class TwitterBot:
         profile = ParseProfile(source)
         th = profile.twitter_handle
         logging.info("calling unfollow_user")
-        if (profile.follows_back == False):
+        if (profile.follows_back == False):            
             logging.info("unfollowing %s" % th)
             unfollow_button = self.driver.find_element_by_css_selector('button.following-text')
             actions = ActionChains(self.driver)
@@ -119,7 +124,7 @@ def main():
     #tb.follow_user('https://twitter.com/grantheimbach')
     #tb.unfollow_user('https://twitter.com/grantheimbach')
     #tb.follow_suggested_followers(100)
-    tb.follow_search(10, "#macos #applications")
+    tb.follow_search(3, "#macos #applications")
     #tb.follow_who_to_follow()
     tb.logout()
 

@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import arrow
 
 class StreamList():
     def __init__(self, html):
@@ -16,3 +17,9 @@ class StreamList():
     
     def follow_buttons(self):
         return 0
+
+def days_since_follow(now, follow_date):
+    today = arrow.get(now)
+    follow_day = arrow.get(follow_date)
+    diff = today - follow_day
+    return diff.days 
