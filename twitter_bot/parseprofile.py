@@ -32,7 +32,7 @@ class ParseProfile():
         #you must be logged in
         soup = BeautifulSoup(self.html, 'html.parser')
         user_actions = soup.find(class_='user-actions')
-        if 'not-following' in user_actions['class']:
+        if user_actions == None or 'not-following' in user_actions['class']:
             return False
         else:
             return True        

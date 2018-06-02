@@ -2,7 +2,7 @@ import pytest
 import context
 from datetime import datetime
 from twitter_bot.parseprofile import ParseProfile
-from test_data import PROFILE_FOLLOWING_ME, PROFILE_NOTFOLLOWING_ME
+from test_data import PROFILE_FOLLOWING_ME, PROFILE_NOTFOLLOWING_ME, PROFILE_ME
 
 
 def test_following_count():
@@ -23,6 +23,10 @@ def test_twitter_handle():
 
 def test_notfollowing():
     profile = ParseProfile(PROFILE_NOTFOLLOWING_ME)
+    assert profile.following == False
+
+def test_notfollowing_itsme():
+    profile = ParseProfile(PROFILE_ME)
     assert profile.following == False
 
 def test_following():

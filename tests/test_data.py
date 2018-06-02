@@ -1,3 +1,106 @@
+PROFILE_ME = """
+<div class="AppContainer">
+        <div class="Grid Grid--withGutter">
+          <div class="Grid-cell u-size1of3 u-lg-size1of4">
+            <div class="ProfileCanopy-card" role="presentation" aria-hidden="true">
+              <div class="ProfileCardMini">
+  <a class="ProfileCardMini-avatar profile-picture js-tooltip" href="https://pbs.twimg.com/profile_images/726753642385022976/MDb8Ka5o.jpg" title="Learning OS X" data-resolved-url-large="https://pbs.twimg.com/profile_images/726753642385022976/MDb8Ka5o.jpg" data-url="https://pbs.twimg.com/profile_images/726753642385022976/MDb8Ka5o.jpg" target="_blank" rel="noopener" tabindex="-1">
+    <img class="ProfileCardMini-avatarImage" alt="Learning OS X" src="https://pbs.twimg.com/profile_images/726753642385022976/MDb8Ka5o_normal.jpg">
+  </a>
+  <div class="ProfileCardMini-details">
+    <div class="ProfileNameTruncated account-group">
+  <div class="u-textTruncate u-inlineBlock">
+    <a class="fullname ProfileNameTruncated-link u-textInheritColor js-nav" href="/LearnmacOS" data-aria-label-part="" tabindex="-1">
+      Learning OS X</a></div><span class="UserBadges"></span>
+</div>
+    <div class="ProfileCardMini-screenname">
+      <a href="/LearnmacOS" class="ProfileCardMini-screennameLink u-linkComplex js-nav u-dir" dir="ltr" tabindex="-1">
+        <span class="username u-dir" dir="ltr">@<b class="u-linkComplex-target">LearnmacOS</b></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+
+          <div class="Grid-cell u-size2of3 u-lg-size3of4">
+            <div class="ProfileCanopy-nav">
+              
+  <div class="ProfileNav" role="navigation" data-user-id="84294891">
+    <ul class="ProfileNav-list">
+<li class="ProfileNav-item ProfileNav-item--tweets is-active" style="">
+          <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav" title="1,239 Tweets" data-nav="tweets" tabindex="0">
+            <span class="ProfileNav-label" aria-hidden="true">Tweets</span>
+              <span class="u-hiddenVisually">Tweets, current page.</span>
+            <span class="ProfileNav-value" data-count="1239" data-is-compact="false">1,239
+            </span>
+          </a>
+        </li><li class="ProfileNav-item ProfileNav-item--following" style="">
+        <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor" title="724 Following" data-nav="following" href="/following">
+          <span class="ProfileNav-label" aria-hidden="true">Following</span>
+            <span class="u-hiddenVisually">Following</span>
+          <span class="ProfileNav-value" data-count="724" data-is-compact="false">724</span>
+        </a>
+      </li><li class="ProfileNav-item ProfileNav-item--followers" style="">
+        <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor" title="344 Followers" data-nav="followers" href="/followers">
+          <span class="ProfileNav-label" aria-hidden="true">Followers</span>
+            <span class="u-hiddenVisually">Followers</span>
+          <span class="ProfileNav-value" data-count="344" data-is-compact="false">344</span>
+        </a>
+      </li><li class="ProfileNav-item ProfileNav-item--favorites" data-more-item=".ProfileNav-dropdownItem--favorites" style="">
+        <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor" title="1 Like" data-nav="favorites" href="/i/likes">
+          <span class="ProfileNav-label" aria-hidden="true">Likes</span>
+            <span class="u-hiddenVisually">Likes</span>
+          <span class="ProfileNav-value" data-count="1" data-is-compact="false">1</span>
+        </a>
+      </li><li class="ProfileNav-item ProfileNav-item--lists" data-more-item=".ProfileNav-dropdownItem--lists" style="">
+        <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip  js-nav u-textUserColor" title="1 List" data-nav="all_lists" href="/LearnmacOS/lists">
+          <span class="ProfileNav-label" aria-hidden="true">Lists</span>
+            <span class="u-hiddenVisually">Lists</span>
+          <span class="ProfileNav-value" data-is-compact="false">1</span>
+        </a></li><li class="ProfileNav-item ProfileNav-item--moments" data-more-item=".ProfileNav-dropdownItem--userMoments" style="">
+        <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor" data-nav="user_moments" href="/LearnmacOS/moments" data-original-title="0 Moments">
+          <span class="ProfileNav-label" aria-hidden="true">Moments</span>
+            <span class="u-hiddenVisually">Moments</span>
+          <span class="ProfileNav-value" data-is-compact="false">0</span>
+        </a></li><li class="ProfileNav-item ProfileNav-item--more dropdown is-hidden" style="">        <a class="ProfileNav-stat ProfileNav-stat--link ProfileNav-stat--moreLink js-dropdown-toggle" role="button" href="#more" aria-haspopup="true">
+          <span class="ProfileNav-label">&nbsp;</span>
+          <span class="ProfileNav-value">More <span class="ProfileNav-dropdownCaret Icon Icon--medium Icon--caretDown"></span></span>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-caret">
+            <span class="caret-outer"></span>
+            <span class="caret-inner"></span>
+          </div>
+          <ul><li>
+              <a href="/i/likes" class="ProfileNav-dropdownItem ProfileNav-dropdownItem--favorites is-hidden u-bgUserColorHover u-bgUserColorFocus u-linkClean js-nav" style="">Likes</a></li><li>
+              <a href="/LearnmacOS/lists" class="ProfileNav-dropdownItem ProfileNav-dropdownItem--lists is-hidden u-bgUserColorHover u-bgUserColorFocus u-linkClean js-nav" style="">Lists</a></li><li>
+              <a href="/LearnmacOS/moments" class="ProfileNav-dropdownItem ProfileNav-dropdownItem--userMoments is-hidden u-bgUserColorHover u-bgUserColorFocus u-linkClean js-nav" style="">Moments</a></li></ul>
+        </div>
+      </li><li class="ProfileNav-item ProfileNav-item--userActions u-floatRight u-textRight with-rightCaret " style="">
+        <div class="UserActions   u-textLeft">
+      <button type="button" class="UserActions-editButton edit-button EdgeButton EdgeButton--tertiary" data-scribe-element="profile_edit_button">
+        <span class="button-text">Edit profile</span>
+      </button>
+      <div class="ProfilePage-editingButtons">
+  <button class="ProfilePage-cancelButton EdgeButton EdgeButton--tertiary" data-scribe-element="cancel_button" tabindex="4">Cancel</button>
+  <span class="ProfilePage-savingIndicator"><span class="spinner-small"></span>Saving...</span>
+  <button class="ProfilePage-saveButton EdgeButton EdgeButton--secondary" tabindex="3">Save changes</button>
+</div>
+
+</div>
+
+      </li>
+    </ul>
+  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+"""
+
 PROFILE_NOTFOLLOWING_ME = """
 <div id="page-container" class="AppContent">
               
